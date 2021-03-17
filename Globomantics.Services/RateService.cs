@@ -44,5 +44,9 @@ namespace Globomantics.Services
             return GetCDRates().FirstOrDefault(x => x.TermLength == term).Value;
         }
 
+        public List<Rate> GetAutoLoanRates()
+        {
+            throw new TimeoutException();
+        }
     }
 }
