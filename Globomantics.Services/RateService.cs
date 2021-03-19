@@ -48,5 +48,36 @@ namespace Globomantics.Services
         {
             throw new TimeoutException();
         }
+
+        public List<MortgageRateDetails> GetMortgageRateDetails()
+        {
+            return new List<MortgageRateDetails>()
+            {
+                new MortgageRateDetails
+                {
+                    InterestRate = 3,
+                    IsFixed = false,
+                    PointsAvailable = 5,
+                    ProductName = "First Time Buyer",
+                    YearTermLength = 30
+                },
+                new MortgageRateDetails
+                {
+                    InterestRate = 2.5,
+                    IsFixed = true,
+                    PointsAvailable = 3,
+                    ProductName = "Stable Planning",
+                    YearTermLength = 15
+                },
+                new MortgageRateDetails
+                {
+                    InterestRate = 2.2,
+                    IsFixed = false,
+                    PointsAvailable = 2,
+                    ProductName = "Quick Payoff",
+                    YearTermLength = 30
+                }
+            };
+        }
     }
 }

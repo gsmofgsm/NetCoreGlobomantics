@@ -14,5 +14,6 @@ namespace Globomantics.Services
 
         double GetCDRateByTerm(CDTermLength term);
         List<Rate> GetAutoLoanRates();
+        List<MortgageRateDetails> GetMortgageRateDetails();
     }
 }
