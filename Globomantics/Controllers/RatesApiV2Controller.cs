@@ -11,14 +11,14 @@ using Globomantics.Convensions;
 
 namespace Globomantics.Controllers
 {
-    [ControllerVersion(Version = 1)]
+    [ControllerVersion(Version = 2)]
     [RateExceptionFilter]
     [Route("api/rates")]
-    public class RatesApiController : Controller
+    public class RatesApiV2Controller : Controller
     {
         private IRateService rateService;
 
-        public RatesApiController(IRateService rateService)
+        public RatesApiV2Controller(IRateService rateService)
         {
             this.rateService = rateService;
         }
@@ -27,7 +27,7 @@ namespace Globomantics.Controllers
         [Route("mortgage")]
         public IActionResult GetMortgageRates()
         {
-            return Ok(rateService.GetMortgageRates());
+            return Ok(rateService.GetMortgageRateDetails());
         }
 
         [HttpGet("autoloan")]

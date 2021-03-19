@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Globomantics.Constraints
 {
-    public class VersionConstraint : IRouteConstraint
+    public class RouteVersionConstraint : IRouteConstraint
     {
         private double requiredVersion;
 
-        public VersionConstraint(double version)
+        public RouteVersionConstraint(double version)
         {
             requiredVersion = version;
         }

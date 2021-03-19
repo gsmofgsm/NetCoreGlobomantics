@@ -46,7 +46,7 @@ namespace Globomantics
             );
             services.Configure<RouteOptions>(options => {
                 options.ConstraintMap.Add("tokenCheck", typeof(TokenConstraint));
-                options.ConstraintMap.Add("versionCheck", typeof(VersionConstraint));
+                options.ConstraintMap.Add("versionCheck", typeof(RouteVersionConstraint));
                 }
             );
 

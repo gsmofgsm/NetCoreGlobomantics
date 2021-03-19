@@ -2,3 +2,10 @@ POST http://localhost:55681/survey/submission
 Content-Type: application/x-www-form-urlencoded
 
 q=1,4,Great Site&q=2,4,Great Service&q=3,5,Needed a Loan
+
+
+GET http://localhost:55681/api/rates/mortgage
+X-version: 1
+
+GET http://localhost:55681/api/rates/mortgage
+X-version: 2.1
