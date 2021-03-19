@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Globomantics.Binders;
 using Globomantics.Constraints;
+using Globomantics.Convensions;
 using Globomantics.Filters;
 using Globomantics.Services;
 using Globomantics.Theme;
@@ -33,6 +34,7 @@ namespace Globomantics
             {
                 options.Filters.Add(typeof(ModelValidationFilter));
                 options.ModelBinderProviders.Insert(0, new SurveyBinderProvider()); // import to insert more specific binders earlier
+                options.Conventions.Add(new APIConvention());  // Convensions are added only once when application starts up
             });
             services.AddSingleton<ILoanService, LoanService>();
             services.AddTransient<IQuoteService, QuoteService>();
