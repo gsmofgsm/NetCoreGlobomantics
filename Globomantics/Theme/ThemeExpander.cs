@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Globomantics.Theme
     {
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
-            var activeTheme = "Beta";
+            var activeTheme = context.Values["ACTIVE_THEME"];
             var expandedLocations = viewLocations.ToList();
 
             for (int i = 0; i < viewLocations.Count(); i++)
@@ -25,7 +26,10 @@ namespace Globomantics.Theme
 
         public void PopulateValues(ViewLocationExpanderContext context)
         {
-            //throw new NotImplementedException();
+            var appSettings = (IConfiguration)context.ActionContext.HttpContext
+                                .RequestServices.GetService(typeof(IConfiguration));
+
+            context.Values["ACTIVE_THEME"] = appSettings["AppSettings:ActiveTheme"];
         }
     }
 }
