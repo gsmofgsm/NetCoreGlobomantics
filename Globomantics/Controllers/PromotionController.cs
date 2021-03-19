@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Globomantics.Convensions;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Globomantics.Controllers
     {
         [HttpGet]
         [Route("promotion/{token:tokenCheck}")]
-        public IActionResult Index()
+        public IActionResult Index([BindName(Name = "token")] string promoCode)
         {
             return View();
         }
