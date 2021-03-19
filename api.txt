@@ -9,3 +9,7 @@ X-version: 1
 
 GET http://localhost:55681/api/rates/mortgage
 X-version: 2.1
+
+GET http://localhost:55681/api/rates/mortgage
+X-version: 1
+Authorization: Basic SGVsbG86V29ybGQ=
